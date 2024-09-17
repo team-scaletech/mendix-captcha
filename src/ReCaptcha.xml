@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget
+    id="scaletech.recaptcha.ReCaptcha"
+    pluginWidget="true"
+    needsEntityContext="true"
+    offlineCapable="true"
+    supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd"
+>
+    <name>Captcha</name>
+    <description>Captcha widget</description>
+    <icon />
+    <properties>
+        <propertyGroup caption="Data source">
+            <property key="captchaAttribute" type="attribute" required="true">
+                <caption>Attribute (path)</caption>
+                <description />
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="General">
+            <property key="apiKey" type="string" required="true">
+                <caption>API Key</caption>
+                <description>The API key for ALTCHA</description>
+            </property>
+            <property key="secret" type="string" required="true">
+                <caption>Secret</caption>
+                <description>The secret key for ALTCHA</description>
+            </property>
+            <property key="hostname" type="string" required="true">
+                <caption>Hostname</caption>
+                <description>The hostname for ALTCHA</description>
+            </property>
+            <property key="license" type="string" required="false">
+                <caption>License</caption>
+                <description>License information for ALTCHA</description>
+            </property>
+            <property key="verificationDnsName" type="string" required="false">
+                <caption>Verification DNS Name</caption>
+                <description>The DNS name for verification</description>
+            </property>
+            <property key="verificationDnsType" type="string" required="false">
+                <caption>Verification DNS Type</caption>
+                <description>The DNS type for verification</description>
+            </property>
+            <property key="verificationDnsValue" type="string" required="false">
+                <caption>Verification DNS Value</caption>
+                <description>The DNS value for verification</description>
+            </property>
+        </propertyGroup>
+        <!-- <propertyGroup caption="Localization">
+            <property key="labelMessage" type="string" required="false">
+                <caption>label message</caption>
+                <description />
+            </property>
+            <property key="verifiedMessage" type="string" required="false">
+                <caption>verified message</caption>
+                <description />
+            </property>
+            <property key="verifyingMessage" type="string" required="false">
+                <caption>verifying message</caption>
+                <description />
+            </property>
+            <property key="waitAlertMessage" type="string" required="false">
+                <caption>waitAlert message</caption>
+                <description />
+            </property>
+            <property key="errorMessage" type="string" required="false">
+                <caption>error message</caption>
+                <description />
+            </property>
+            <property key="expiredMessage" type="string" required="false">
+                <caption>expired message</caption>
+                <description />
+            </property>
+        </propertyGroup> -->
+        <propertyGroup caption="Events">
+            <property key="captchaAction" type="action">
+                <caption>onChange</caption>
+                <description />
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>
