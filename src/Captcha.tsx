@@ -11,12 +11,12 @@ export const Captcha: FC<CaptchaContainerProps> = ({
     verificationDnsName,
     verificationDnsType,
     verificationDnsValue,
-    labelMessage,
-    verifiedMessage,
-    verifyingMessage,
-    waitAlertMessage,
-    errorMessage,
-    expiredMessage,
+    // labelMessage,
+    // verifiedMessage,
+    // verifyingMessage,
+    // waitAlertMessage,
+    // errorMessage,
+    // expiredMessage,
     captchaAction,
     captchaAttribute,
     style,
@@ -35,14 +35,14 @@ export const Captcha: FC<CaptchaContainerProps> = ({
             }
         }
     };
-    const localizationData = {
-        label: labelMessage ? labelMessage : "I'm not a robot",
-        verified: verifiedMessage ? verifiedMessage : "Verified",
-        verifying: verifyingMessage ? verifyingMessage : "Verifying...",
-        waitAlert: waitAlertMessage ? waitAlertMessage : "Verifying... please wait.",
-        error: errorMessage ? errorMessage : "Verification failed. Try again later.",
-        expired: expiredMessage ? expiredMessage : "Verification expired. Try again."
-    };
+    // const localizationData = {
+    //     label: labelMessage ? labelMessage : "I'm not a robot",
+    //     verified: verifiedMessage ? verifiedMessage : "Verified",
+    //     verifying: verifyingMessage ? verifyingMessage : "Verifying...",
+    //     waitAlert: waitAlertMessage ? waitAlertMessage : "Verifying... please wait.",
+    //     error: errorMessage ? errorMessage : "Verification failed. Try again later.",
+    //     expired: expiredMessage ? expiredMessage : "Verification expired. Try again."
+    // };
     const onchange = (ev: Event | CustomEvent) => {
         if ("detail" in ev) {
             const captchaState = ev.detail.state || "";
@@ -53,16 +53,16 @@ export const Captcha: FC<CaptchaContainerProps> = ({
                     console.error("Error setting attribute value:", error);
                 }
             }
-
             if (captchaState === "verified" && captchaAction && captchaAction.canExecute) {
                 captchaAction.execute();
             }
         }
     };
+
     return (
         <Altcha
             Jsondata={json}
-            localizationData={localizationData}
+            // localizationData={localizationData}
             style={style}
             customClass={customClass}
             onStateChange={ev => onchange(ev)}

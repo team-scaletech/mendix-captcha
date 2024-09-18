@@ -52,7 +52,7 @@
                 <description>The DNS value for verification</description>
             </property>
         </propertyGroup>
-        <propertyGroup caption="Localization">
+        <!-- <propertyGroup caption="Localization">
             <property key="labelMessage" type="string" required="false">
                 <caption>label message</caption>
                 <description />
@@ -77,7 +77,7 @@
                 <caption>expired message</caption>
                 <description />
             </property>
-        </propertyGroup>
+        </propertyGroup> -->
         <propertyGroup caption="Events">
             <property key="captchaAction" type="action">
                 <caption>onChange</caption>

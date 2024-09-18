@@ -56,6 +56,7 @@ const Altcha = forwardRef<{ value: string | null }, AltchaProps>(
             maxNumber,
             salt,
             signature,
+            test: false,
             hostname: hostname,
             apiKey: apiKey,
             secret: secret,
@@ -66,15 +67,16 @@ const Altcha = forwardRef<{ value: string | null }, AltchaProps>(
         useEffect(() => {
             const { current } = widgetRef;
             if (current) {
+                const handleStateChange = async (ev: Event | CustomEvent) => {
+                    if ("detail" in ev) {
+                        onStateChange?.(ev);
+                    }
+                };
                 current.addEventListener("statechange", handleStateChange);
                 return () => current.removeEventListener("statechange", handleStateChange);
             }
-        }, []);
-        const handleStateChange = (ev: Event | CustomEvent) => {
-            if ("detail" in ev) {
-                onStateChange?.(ev);
-            }
-        };
+        }, [onStateChange]);
+
         return (
             <div className={`${customClass}`}>
                 <altcha-widget

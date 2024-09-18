@@ -9,10 +9,8 @@ export const preview: FC<CaptchaPreviewProps> = ({
     license,
     verificationDnsName,
     verificationDnsType,
-    verificationDnsValue,
-    captchaAction
+    verificationDnsValue
 }) => {
-    console.dir(captchaAction);
     const json = {
         hostname: hostname,
         apiKey: apiKey,
