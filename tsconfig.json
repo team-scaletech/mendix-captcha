@@ -1,39 +1,3 @@
-// {
-//     "extends": "@mendix/pluggable-widgets-tools/configs/tsconfig.base",
-//     "compilerOptions": {
-//         "jsx": "react-jsx",
-//         "baseUrl": "./src",
-//         "jsxFactory": "",
-//         "composite": true,
-//         "declaration": true,
-//         "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-//         "target": "ES2020",
-//         "useDefineForClassFields": true,
-//         "lib": ["ES2020", "DOM", "DOM.Iterable"],
-//         "module": "ESNext",
-//         "skipLibCheck": true,
-//         "moduleResolution": "node",
-//         "resolveJsonModule": true,
-//         "isolatedModules": true,
-//         "moduleDetection": "force",
-//         "strict": true,
-//         "noUnusedLocals": true,
-//         "noUnusedParameters": true,
-//         "noFallthroughCasesInSwitch": true,
-//         "allowJs": true,
-//         "esModuleInterop": true,
-//         "allowSyntheticDefaultImports": true,
-//         "forceConsistentCasingInFileNames": true,
-//         "noImplicitOverride": false,
-//         "noEmit": true,
-//         "noPropertyAccessFromIndexSignature": false,
-//         "outDir": "./dist",
-//         "rootDir": "./src"
-//     },
-//     "include": ["./src", "./typings", "**/*.ts", "**/*.tsx"],
-//     "exclude": ["node_modules"]
-// }
-
 {
     "extends": "@mendix/pluggable-widgets-tools/configs/tsconfig.base",
     "compilerOptions": {

@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { ReCaptchaPreviewProps } from "../typings/ReCaptchaProps";
+import { CaptchaPreviewProps } from "../typings/CaptchaProps";
 import Altcha from "./components/AltCha";
 
-export const preview: FC<ReCaptchaPreviewProps> = ({
+export const preview: FC<CaptchaPreviewProps> = ({
     hostname,
     apiKey,
     secret,
@@ -32,5 +32,5 @@ export const preview: FC<ReCaptchaPreviewProps> = ({
 };
 
 export function getPreviewCss(): string {
-    return require("./ui/ReCaptcha.css");
+    return require("./ui/Captcha.css");
 }

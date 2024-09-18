@@ -19,6 +19,12 @@ export interface CaptchaContainerProps {
     verificationDnsName: string;
     verificationDnsType: string;
     verificationDnsValue: string;
+    labelMessage: string;
+    verifiedMessage: string;
+    verifyingMessage: string;
+    waitAlertMessage: string;
+    errorMessage: string;
+    expiredMessage: string;
     captchaAction?: ActionValue;
 }
 
@@ -40,5 +46,11 @@ export interface CaptchaPreviewProps {
     verificationDnsName: string;
     verificationDnsType: string;
     verificationDnsValue: string;
+    labelMessage: string;
+    verifiedMessage: string;
+    verifyingMessage: string;
+    waitAlertMessage: string;
+    errorMessage: string;
+    expiredMessage: string;
     captchaAction: {} | null;
 }

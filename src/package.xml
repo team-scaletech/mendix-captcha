@@ -2,10 +2,10 @@
 <package xmlns="http://www.mendix.com/package/1.0/">
     <clientModule name="Captcha" version="1.0.0" xmlns="http://www.mendix.com/clientModule/1.0/">
         <widgetFiles>
-            <widgetFile path="Captcha.xml" />
+            <widgetFile path="Captcha.xml"/>
         </widgetFiles>
         <files>
-            <file path="scaletech/captcha" />
+            <file path="scaletech/captcha"/>
         </files>
     </clientModule>
 </package>

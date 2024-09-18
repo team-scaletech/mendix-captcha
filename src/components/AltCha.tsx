@@ -8,7 +8,7 @@ interface AltchaProps {
     style?: CSSProperties;
     onStateChange?: (ev: Event | CustomEvent) => void;
     Jsondata: MyData; // this interface use to altcha challengejson
-    // localizationData?: Localization;
+    localizationData?: Localization;
 }
 export interface MyData {
     hostname: string;
@@ -39,8 +39,8 @@ const Altcha = forwardRef<{ value: string | null }, AltchaProps>(
         onStateChange,
         customClass,
         style,
-        Jsondata: { hostname, apiKey, secret, license, verification }
-        // localizationData
+        Jsondata: { hostname, apiKey, secret, license, verification },
+        localizationData
     }) => {
         const widgetRef = useRef<HTMLElement>(null);
         const maxNumber = 100_000;
@@ -82,9 +82,9 @@ const Altcha = forwardRef<{ value: string | null }, AltchaProps>(
                     challengejson={JSON.stringify({
                         ...response
                     })}
-                    // strings={JSON.stringify({
-                    //     ...localizationData
-                    // })}
+                    strings={JSON.stringify({
+                        ...localizationData
+                    })}
                     style={style}
                     ref={widgetRef}
                 />
