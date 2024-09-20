@@ -4,25 +4,3 @@ declare namespace JSX {
         "altcha-widget": AltchaWidgetReact;
     }
 }
-
-declare const mx: {
-    data: {
-        action(params: {
-            actionname: string;
-            params?: any;
-            callback?: (result: any) => void;
-            error?: (error: any) => void;
-        }): void;
-    };
-};
-
-declare module "mxui" {
-    export const data: {
-        action(params: {
-            actionname: string;
-            params?: any;
-            callback?: (result: any) => void;
-            error?: (error: any) => void;
-        }): void;
-    };
-}

@@ -2,6 +2,7 @@ import { useEffect, useRef, forwardRef, CSSProperties } from "react";
 import "altcha"; // Importing the altcha package, which adds a <altcha-widget> element
 import { generateRandomInt, generateRandomString, hmacSha256Hex, sha256Hex } from "../utils/utility";
 import CryptoJS from "crypto-js";
+import { AutoVerifyEnum, FloatingUiEnum, HidefooterEnum, HidelogoEnum } from "../../typings/CaptchaProps";
 
 interface AltchaProps {
     customClass?: string;
@@ -9,6 +10,13 @@ interface AltchaProps {
     onStateChange?: (ev: Event | CustomEvent) => void;
     Jsondata: MyData; // this interface use to altcha challengejson
     localizationData?: Localization;
+    autoVerify?: AutoVerifyEnum;
+    delayTime?: number;
+    floatingUi?: FloatingUiEnum;
+    floatinganchor?: string;
+    offSet?: number;
+    hidefooter?: HidefooterEnum;
+    hidelogo?: HidelogoEnum;
 }
 export interface MyData {
     hostname: string;
@@ -40,7 +48,14 @@ const Altcha = forwardRef<{ value: string | null }, AltchaProps>(
         customClass,
         style,
         Jsondata: { hostname, apiKey, secret, license, verification },
-        localizationData
+        localizationData,
+        autoVerify,
+        delayTime,
+        floatingUi,
+        floatinganchor,
+        offSet,
+        hidefooter,
+        hidelogo
     }) => {
         const widgetRef = useRef<HTMLElement>(null);
         const maxNumber = 100_000;
@@ -80,6 +95,8 @@ const Altcha = forwardRef<{ value: string | null }, AltchaProps>(
         return (
             <div className={`${customClass}`}>
                 <altcha-widget
+                    style={style}
+                    ref={widgetRef}
                     challengeurl={`https://us.altcha.org/api/v1/challenge?apiKey=${apiKey}`}
                     challengejson={JSON.stringify({
                         ...response
@@ -87,8 +104,13 @@ const Altcha = forwardRef<{ value: string | null }, AltchaProps>(
                     strings={JSON.stringify({
                         ...localizationData
                     })}
-                    style={style}
-                    ref={widgetRef}
+                    auto={autoVerify}
+                    delay={delayTime}
+                    floating={floatingUi === "none" ? "false" : floatingUi}
+                    floatinganchor={`button[type=${floatinganchor != "" ? floatinganchor : "submit"}]`}
+                    floatingoffset={offSet}
+                    hidefooter={hidefooter === "Yes" ? true : false}
+                    hidelogo={hidelogo === "Yes" ? true : false}
                 />
             </div>
         );

@@ -20,7 +20,14 @@ export const Captcha: FC<CaptchaContainerProps> = ({
     captchaAction,
     captchaAttribute,
     style,
-    class: customClass
+    class: customClass,
+    autoVerify,
+    delayTime,
+    floatingUi,
+    floatinganchor,
+    offSet,
+    hidefooter,
+    hidelogo
 }) => {
     const json = {
         hostname: hostname,
@@ -66,6 +73,13 @@ export const Captcha: FC<CaptchaContainerProps> = ({
             style={style}
             customClass={customClass}
             onStateChange={ev => onchange(ev)}
+            autoVerify={autoVerify}
+            delayTime={delayTime}
+            floatingUi={floatingUi}
+            floatinganchor={floatinganchor}
+            offSet={offSet}
+            hidefooter={hidefooter}
+            hidelogo={hidelogo}
         />
     );
 };

@@ -84,5 +84,57 @@
                 <description />
             </property>
         </propertyGroup>
+        <propertyGroup caption="Configuration">
+            <property key="autoVerify" type="enumeration" defaultValue="off">
+                <caption>Auto Verify</caption>
+                <description>Automatically verify without user interaction</description>
+                <enumerationValues>
+                    <enumerationValue key="off">off</enumerationValue>
+                    <enumerationValue key="onfocus">onfocus</enumerationValue>
+                    <enumerationValue key="onload">onload</enumerationValue>
+                    <enumerationValue key="onsubmit">onsubmit</enumerationValue>
+                </enumerationValues>
+            </property>
+            <property key="delayTime" type="integer" defaultValue="0">
+                <caption>Delay</caption>
+                <description>Artificial delay in milliseconds before verification</description>
+            </property>
+            <property key="floatingUi" type="enumeration" defaultValue="none">
+                <caption>Floating UI</caption>
+                <description />
+                <enumerationValues>
+                    <enumerationValue key="none">none</enumerationValue>
+                    <enumerationValue key="auto">auto</enumerationValue>
+                    <enumerationValue key="top">top</enumerationValue>
+                    <enumerationValue key="bottom">bottom</enumerationValue>
+                </enumerationValues>
+            </property>
+            <property key="floatinganchor" type="string" required="false">
+                <caption>Floatinganchor</caption>
+                <description>
+                    specify the CSS selector of the anchor element where you want the floating UI to be attached.
+                </description>
+            </property>
+            <property key="offSet" type="integer" defaultValue="12">
+                <caption>Floatingoffset</caption>
+                <description>Y offset from the anchor element for the floating UI in pixels</description>
+            </property>
+            <property key="hidefooter" type="enumeration" defaultValue="No">
+                <caption>Hidefooter</caption>
+                <description />
+                <enumerationValues>
+                    <enumerationValue key="Yes">Yes</enumerationValue>
+                    <enumerationValue key="No">No</enumerationValue>
+                </enumerationValues>
+            </property>
+            <property key="hidelogo" type="enumeration" defaultValue="No">
+                <caption>Hidelogo</caption>
+                <description />
+                <enumerationValues>
+                    <enumerationValue key="Yes">Yes</enumerationValue>
+                    <enumerationValue key="No">No</enumerationValue>
+                </enumerationValues>
+            </property>
+        </propertyGroup>
     </properties>
 </widget>

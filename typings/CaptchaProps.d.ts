@@ -6,6 +6,14 @@
 import { CSSProperties } from "react";
 import { ActionValue, EditableValue } from "mendix";
 
+export type AutoVerifyEnum = "off" | "onfocus" | "onload" | "onsubmit";
+
+export type FloatingUiEnum = "none" | "auto" | "top" | "bottom";
+
+export type HidefooterEnum = "Yes" | "No";
+
+export type HidelogoEnum = "Yes" | "No";
+
 export interface CaptchaContainerProps {
     name: string;
     class: string;
@@ -20,6 +28,13 @@ export interface CaptchaContainerProps {
     verificationDnsType: string;
     verificationDnsValue: string;
     captchaAction?: ActionValue;
+    autoVerify: AutoVerifyEnum;
+    delayTime: number;
+    floatingUi: FloatingUiEnum;
+    floatinganchor: string;
+    offSet: number;
+    hidefooter: HidefooterEnum;
+    hidelogo: HidelogoEnum;
 }
 
 export interface CaptchaPreviewProps {
@@ -41,4 +56,11 @@ export interface CaptchaPreviewProps {
     verificationDnsType: string;
     verificationDnsValue: string;
     captchaAction: {} | null;
+    autoVerify: AutoVerifyEnum;
+    delayTime: number | null;
+    floatingUi: FloatingUiEnum;
+    floatinganchor: string;
+    offSet: number | null;
+    hidefooter: HidefooterEnum;
+    hidelogo: HidelogoEnum;
 }
